@@ -51,6 +51,8 @@ class TasksController extends Controller
         ]);
         
         $task = new Task;
+        
+        $task->user_id = $request->user()->id;
         $task->status = $request->status;
         $task->content = $request->content;
         $task->save();
